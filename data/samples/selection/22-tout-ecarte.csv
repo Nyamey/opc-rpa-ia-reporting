@@ -1,0 +1,6 @@
+process_id,nom,secteur,perimetre,volumetrie_annuelle,temps_unitaire_min,taux_regles,stabilite,structuration_donnees,nb_applications,api_disponible,criticite_reglementaire,taux_erreur_actuel
+ECAR-01,Processus marginal 1,GRM,France,600,3,95,5,structuré,2,non,1,0.2
+ECAR-02,Processus marginal 2,GRM,France,600,3,95,5,structuré,2,non,1,0.2
+ECAR-03,Processus marginal 3,GRM,France,600,3,95,5,structuré,2,non,1,0.2
+ECAR-04,Processus marginal 4,GRM,France,600,3,95,5,structuré,2,non,1,0.2
+ECAR-05,Processus marginal 5,GRM,France,600,3,95,5,structuré,2,non,1,0.2

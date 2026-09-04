@@ -1,0 +1,4 @@
+trade_id,counterparty,product,trade_date,amount,currency
+TRD-1001,Societe Generale,FX Forward,2026-08-04,,USD
+TRD-1002,HSBC,Equity Swap,2026-08-05,n/a,GBP
+TRD-1003,Deutsche Bank,CDS,2026-08-06,103750.00,CHF

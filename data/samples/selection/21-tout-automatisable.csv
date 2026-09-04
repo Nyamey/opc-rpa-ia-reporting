@@ -1,0 +1,6 @@
+process_id,nom,secteur,perimetre,volumetrie_annuelle,temps_unitaire_min,taux_regles,stabilite,structuration_donnees,nb_applications,api_disponible,criticite_reglementaire,taux_erreur_actuel
+AUTO-01,Processus favorable 1,CMO,France,41000,8,95,5,structuré,2,non,4,3.2
+AUTO-02,Processus favorable 2,CMO,France,42000,8,95,5,structuré,2,non,4,3.2
+AUTO-03,Processus favorable 3,CMO,France,43000,8,95,5,structuré,2,non,4,3.2
+AUTO-04,Processus favorable 4,CMO,France,44000,8,95,5,structuré,2,non,4,3.2
+AUTO-05,Processus favorable 5,CMO,France,45000,8,95,5,structuré,2,non,4,3.2

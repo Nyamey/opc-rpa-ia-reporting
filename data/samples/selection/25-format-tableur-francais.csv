@@ -1,0 +1,7 @@
+process_id;nom;secteur;perimetre;volumetrie_annuelle;temps_unitaire_min;taux_regles;stabilite;structuration_donnees;nb_applications;api_disponible;criticite_reglementaire;taux_erreur_actuel
+AUTO-01;Rapprochement des relevés;TBS-CMS;France;45000;8;95;5;structuré;2;non;4;3.2
+HYBR-01;Contrôle documentaire;FTO;France;68000;9;50;5;non structuré;2;non;4;3.2
+INTE-01;Extraction des positions;CMO;France;45000;8;95;5;structuré;2;oui;4;3.2
+OPTI-01;Suivi des suspens;CMO;France;45000;8;55;3;semi-structuré;4;non;4;3.2
+BACK-01;Mise à jour des données statiques;GRM;France;32000;6;90;5;structuré;2;non;3;2.4
+ECAR-01;Relance des débiteurs;TBS-SCS;France;1800;2;95;5;structuré;2;non;2;2.2

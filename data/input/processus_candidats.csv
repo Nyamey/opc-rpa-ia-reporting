@@ -1,0 +1,21 @@
+process_id,nom,secteur,perimetre,volumetrie_annuelle,temps_unitaire_min,taux_regles,stabilite,structuration_donnees,nb_applications,api_disponible,criticite_reglementaire,taux_erreur_actuel
+CMO-01,Réconciliation front office contre back office,CMO,France,45000,8,95,5,structuré,2,non,4,3.2
+CMO-02,Confirmation des opérations de gré à gré,CMO,International,28000,12,80,4,semi-structuré,3,non,5,2.1
+CMO-03,Traitement des appels de marge,CMO,France,12500,15,85,4,structuré,3,non,5,1.8
+CMO-04,Suivi des suspens de règlement livraison,CMO,International,9800,22,55,3,semi-structuré,4,non,4,4.5
+CMO-05,Extraction des positions pour le calcul de risque,CMO,France,2600,10,98,5,structuré,2,oui,3,0.4
+GRM-01,Création de tiers dans le référentiel groupe,GRM,International,18500,18,70,4,semi-structuré,4,non,4,3.8
+GRM-02,Mise à jour des données statiques contrepartie,GRM,France,32000,6,90,5,structuré,2,non,3,2.4
+GRM-03,Contrôle de cohérence inter référentiels,GRM,International,7200,25,88,4,structuré,5,non,4,1.5
+GRM-04,Enrichissement des identifiants LEI,GRM,France,4100,9,92,5,structuré,2,oui,4,0.9
+FTO-01,Contrôle documentaire des crédits documentaires,FTO,International,15600,35,45,3,non structuré,4,non,5,5.6
+FTO-02,Saisie des garanties internationales,FTO,International,6800,28,60,3,non structuré,3,non,5,4.2
+FTO-03,Suivi des échéances de crédits syndiqués,FTO,France,3400,20,75,4,semi-structuré,3,non,4,2.7
+FTO-04,Archivage réglementaire des dossiers de financement,FTO,France,11200,5,96,5,structuré,2,non,2,0.6
+TBS-CMS-01,Rapprochement des relevés bancaires clients,TBS-CMS,International,52000,7,93,5,structuré,3,non,3,2.9
+TBS-CMS-02,Traitement des rejets de virements,TBS-CMS,France,21000,11,72,3,semi-structuré,4,non,4,3.5
+TBS-CMS-03,Ouverture de comptes clients corporate,TBS-CMS,International,2900,45,40,2,non structuré,5,non,5,6.1
+TBS-SCS-01,Traitement des factures fournisseurs en affacturage,TBS-SCS,International,68000,9,50,4,non structuré,3,non,3,4.8
+TBS-SCS-02,Contrôle des demandes de financement de créances,TBS-SCS,France,14300,16,78,4,semi-structuré,4,non,4,3.1
+TBS-SCS-03,Relance des débiteurs en retard de paiement,TBS-SCS,France,1800,12,65,2,semi-structuré,3,non,2,2.2
+TBS-SCS-04,Édition des états de position clients,TBS-SCS,France,900,8,97,5,structuré,1,oui,2,0.3

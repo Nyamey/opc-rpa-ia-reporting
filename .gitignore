@@ -1,0 +1,39 @@
+# Environnement virtuel
+venv/
+.venv/
+
+# Secrets locaux
+.env
+.streamlit/secrets.toml
+
+# Artefacts Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Journaux d'exécution
+logs/
+
+# Livrables régénérés à chaque exécution
+data/output/*.xlsx
+data/output/*.txt
+data/output/*.csv
+
+# Tables Power BI régénérées à chaque exécution.
+data/powerbi/fact_breaks.csv
+data/powerbi/fact_matched.csv
+data/powerbi/dim_*.csv
+
+# Les deux historiques sont délibérément conservés. Les ignorer reviendrait à
+# repartir de zéro à chaque clonage, donc à supprimer toute profondeur de
+# tendance et tout calcul d'ancienneté des écarts.
+!data/powerbi/kpi_history.csv
+!data/powerbi/fact_breaks_history.csv
+
+# Répertoires de travail créés par les scripts de contrôle des jeux de recette
+data/samples/.controle/
+data/samples/selection/.controle-selection/
+
+# Fichiers système
+Thumbs.db
+.DS_Store

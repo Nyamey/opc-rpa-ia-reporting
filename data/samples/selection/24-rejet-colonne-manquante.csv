@@ -1,0 +1,2 @@
+process_id,nom,secteur,perimetre,temps_unitaire_min,taux_regles,stabilite,structuration_donnees,nb_applications,api_disponible,criticite_reglementaire,taux_erreur_actuel
+PART-01,Incomplet,CMO,France,8,95,5,structuré,2,non,4,3.2

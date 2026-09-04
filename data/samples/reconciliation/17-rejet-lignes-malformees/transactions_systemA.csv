@@ -1,0 +1,3 @@
+trade_id,counterparty,product,trade_date,amount,currency
+TRD-1001,BNP Paribas,IRS,2026-08-03,100000.00,EUR
+TRD-1002,Bank,X,IRS,2026-08-03,200000.00,EUR,surplus

@@ -1,0 +1,20 @@
+# Normalisation des fins de ligne.
+#
+# Les fichiers texte sont stockés avec des fins de ligne Unix dans le dépôt et
+# restitués selon la convention du poste de travail. Sans cette règle, un même
+# fichier édité sous Windows puis sous Linux apparaît intégralement modifié
+# dans les différences, ce qui rend l'historique illisible.
+
+* text=auto eol=lf
+
+# Les fichiers d'essai portant un encodage ou un séparateur particulier sont
+# traités comme binaires : toute normalisation altérerait précisément ce que
+# ces jeux servent à vérifier.
+data/samples/reconciliation/03-format-tableur-francais/* -text
+data/samples/reconciliation/04-format-tabulation/* -text
+data/samples/reconciliation/05-format-utf8-bom/* -text
+data/samples/selection/25-format-tableur-francais.csv -text
+
+# Formats binaires
+*.xlsx binary
+*.pbix binary

@@ -1,0 +1,31 @@
+# Thème de l'application.
+#
+# Le thème clair est fixé plutôt que laissé au réglage du navigateur : les
+# couleurs des graphiques ont été validées contre cette surface précise, et un
+# basculement automatique en sombre invaliderait les contrôles de contraste et
+# de séparation des couleurs.
+
+[theme]
+base = "light"
+primaryColor = "#2a78d6"
+backgroundColor = "#f9f9f7"
+secondaryBackgroundColor = "#fcfcfb"
+textColor = "#0b0b0b"
+font = "sans serif"
+
+[server]
+headless = true
+
+# L'écoute est restreinte au poste local. Par défaut, Streamlit se lie à
+# toutes les interfaces et l'application devient accessible depuis le réseau,
+# voire depuis l'extérieur si un routeur redirige le port. Les données sont
+# ici synthétiques, mais la même application branchée sur des extractions
+# réelles exposerait des données de marché sans aucune authentification.
+# Une diffusion volontaire doit être un geste explicite, pas un défaut.
+address = "localhost"
+
+# Bornage des fichiers téléversés, en mégaoctets.
+maxUploadSize = 50
+
+[browser]
+gatherUsageStats = false

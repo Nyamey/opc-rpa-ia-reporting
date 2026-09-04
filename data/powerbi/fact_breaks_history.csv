@@ -1,0 +1,13 @@
+﻿run_date,run_id,break_key,trade_id,counterparty,product,trade_date,currency,break_type,break_amount,suggested_reason,confidence
+2026-09-02,20260902_160927,TRD-1005|Barclays|CDS|2026-08-04|USD|amount,TRD-1005,Barclays,CDS,2026-08-04,USD,amount,500.0,Erreur de saisie du montant,0.8
+2026-09-02,20260902_160927,TRD-1008|Natixis|Bond Future|2026-08-05|EUR|missing_B,TRD-1008,Natixis,Bond Future,2026-08-05,EUR,missing_B,725000.0,Transaction absente du Système B,0.9
+2026-09-02,20260902_160927,TRD-1012|HSBC|CDS|2026-08-06|EUR|missing_A,TRD-1012,HSBC,CDS,2026-08-06,EUR,missing_A,410000.0,Transaction absente du Système A,0.9
+2026-09-02,20260902_160927,TRD-1012|HSBC|CDS|2026-08-06|GBP|missing_B,TRD-1012,HSBC,CDS,2026-08-06,GBP,missing_B,410000.0,Transaction absente du Système B,0.9
+2026-09-02,20260902_160927,TRD-1013|Goldman Sachs|Bond Future|2026-08-07|USD|amount,TRD-1013,Goldman Sachs,Bond Future,2026-08-07,USD,amount,1000.0,Erreur de saisie du montant,0.8
+2026-09-02,20260902_160927,TRD-1017|Credit Agricole|FX Forward|2026-08-10|USD|missing_B,TRD-1017,Credit Agricole,FX Forward,2026-08-10,USD,missing_B,367250.4,Transaction absente du Système B,0.9
+2026-09-02,20260902_160927,TRD-1017|Credit Agricole|FX Forward|2026-08-11|USD|missing_A,TRD-1017,Credit Agricole,FX Forward,2026-08-11,USD,missing_A,367250.4,Transaction absente du Système A,0.9
+2026-09-02,20260902_160927,TRD-1021|BNP Paribas|Equity Swap|2026-08-11|EUR|amount,TRD-1021,BNP Paribas,Equity Swap,2026-08-11,EUR,amount,750.0,Erreur de saisie du montant,0.8
+2026-09-02,20260902_160927,TRD-1024|Goldman Sachs|FX Forward|2026-08-12|USD|missing_B,TRD-1024,Goldman Sachs,FX Forward,2026-08-12,USD,missing_B,1460500.0,Transaction absente du Système B,0.9
+2026-09-02,20260902_160927,TRD-1029|JP Morgan|FX Spot|2026-08-14|USD|amount,TRD-1029,JP Morgan,FX Spot,2026-08-14,USD,amount,1800.0,Erreur de saisie du montant,0.8
+2026-09-02,20260902_160927,TRD-1031|Rabobank|FX Forward|2026-08-14|EUR|missing_A,TRD-1031,Rabobank,FX Forward,2026-08-14,EUR,missing_A,318900.0,Transaction absente du Système A,0.9
+2026-09-02,20260902_160927,TRD-1032|Intesa Sanpaolo|IRS|2026-08-14|EUR|missing_A,TRD-1032,Intesa Sanpaolo,IRS,2026-08-14,EUR,missing_A,1105000.0,Transaction absente du Système A,0.9

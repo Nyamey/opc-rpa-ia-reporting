@@ -1,0 +1,4 @@
+﻿trade_id,counterparty,product,trade_date,amount,currency
+TRD-1001,Société Générale,FX Forward,2026-08-04,101250.00,USD
+TRD-1002,Crédit Agricole,Equity Swap,2026-08-05,102500.00,GBP
+TRD-1003,Natixis,CDS,2026-08-06,103750.00,CHF
