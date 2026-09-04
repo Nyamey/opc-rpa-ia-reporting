@@ -26,7 +26,7 @@ Outputs comprise an Excel workbook, a management summary, an error log and six P
 
 ### Engineering notes
 
-Seventy-nine automated tests cover matching logic, indicator computation, schema stability and security. A security review found and fixed a spreadsheet formula injection vulnerability: a counterparty named `=cmd|'/c calc.exe'!A0` was written to the workbook as an executable dynamic data exchange formula rather than as text. Remediation, secret redaction in logs and transport validation are documented in the solution design.
+Ninety-two automated tests cover matching logic, indicator computation, schema stability, file parsing and security, alongside twenty-four tooled acceptance datasets. A security review found and fixed a spreadsheet formula injection vulnerability: a counterparty named `=cmd|'/c calc.exe'!A0` was written to the workbook as an executable dynamic data exchange formula rather than as text. Remediation, secret redaction in logs and transport validation are documented in the solution design.
 
 Built with Python and pandas, reporting through Excel, Power BI and an interactive Streamlit view (`streamlit run streamlit_app.py`). The design is deliberately tool-agnostic: the same logical model would transfer to UiPath, Power Automate or Automation Anywhere in a production environment.
 
