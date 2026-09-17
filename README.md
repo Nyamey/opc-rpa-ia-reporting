@@ -1,34 +1,38 @@
 # Automatisation des opérations bancaires : sélection et réconciliation
 
-## Executive summary
+## Case study
 
-**Intelligent automation for banking operations: process selection and transaction reconciliation.**
+**Before automating anything, prove the process actually deserves it.**
 
-This repository covers the two decisive moments of an automation programme within a bank's operations division: selecting the right processes, then industrialising one of them end to end. The working language of the detailed documentation is French; this summary states the scope, the design decisions and the results.
+The working language of the detailed documentation below is French; this section is the case study for an English-speaking reviewer.
 
-### Process selection
+### The problem
 
-Twenty candidate processes across five operational sectors (Capital Markets Operations, Global Referential Management, Financing and Trade Operations, Cash Management Services and Supply Chain Services) are scored on two axes. The value axis weighs the manual workload expressed in full-time equivalents, the regulatory exposure and the current error rate. The feasibility axis weighs the proportion of rule-based handling, process stability, input data structure and the number of applications involved.
+A bank's operations division loses several hours a day reconciling front-office and back-office records by hand, then justifying every discrepancy line by line — tedious, repetitive, and exactly the kind of work automation should absorb. But in a regulated bank, reaching for RPA on the wrong process is a common and expensive mistake: automating a process that already has an API, or one whose inputs are unstructured, hard-codes a bad design instead of fixing it.
 
-Three criteria are treated as knock-out rules rather than weighted averages, because a strong score elsewhere must not offset them:
+### The decision: prove the candidate before building anything
 
-- **An application programming interface already exists.** Driving a screen with a robot when the system exposes an API is an engineering mistake: more brittle and more expensive to maintain than direct integration. The process leaves the RPA scope.
-- **Input data is unstructured.** A robot cannot read a document. Such a process requires a hybrid design in which document recognition precedes the robot, never a classic automation.
-- **Rule-based handling falls below 60 per cent.** Automating a process where four cases out of ten depart from the standard path would hard-code the workarounds teams invented to compensate for a poorly designed process.
+This repository covers the two moments of an automation programme, in that order — select the right process, then industrialise one end to end. Twenty candidate processes across five operational sectors (Capital Markets Operations, Global Referential Management, Financing and Trade Operations, Cash Management Services, Supply Chain Services) are scored on two axes: value (FTE workload, regulatory exposure, current error rate) and feasibility (share of rule-based handling, process stability, input structure, number of systems touched).
 
-Eleven processes are retained, representing 37 FTE of addressable workload out of 45 FTE assessed. The two largest opportunities both require document recognition, which leads to a conclusion worth raising in steering committee: the programme cannot meet its savings target through robotic process automation alone.
+Three criteria are treated as knock-outs rather than weighted factors, because a strong score elsewhere must never compensate for them:
 
-### The automated process
+- **An API already exists.** Driving a screen with a robot when the system exposes an interface is an engineering mistake — more brittle and more expensive to maintain than a direct integration. The process leaves RPA scope entirely.
+- **Input data is unstructured.** A robot cannot read a document; the process needs a hybrid design with document recognition ahead of the robot, never a classic automation.
+- **Rule-based handling falls below 60%.** Automating a process where four cases out of ten fall outside the standard path would hard-code the workarounds teams invented to compensate for a poorly designed process, rather than fix the process.
 
-Daily reconciliation between front office and back office records, ranked by the grid as the leading candidate in Capital Markets Operations. Transactions are matched on five keys, amounts are compared within tolerance, and each break is qualified with a probable cause, a recommended action and a confidence score. A language model performs this qualification when configured, with a deterministic rule set taking over on any failure, so that service degrades rather than stops.
+Eleven of twenty processes are retained, representing 37 FTE of addressable workload out of 45 assessed. The trade-off worth surfacing in a steering committee: the two largest opportunities both need document recognition, so the programme cannot hit its savings target with classic RPA alone — a conclusion the scoring grid forces out before a single line of automation code is written.
 
-Outputs comprise an Excel workbook, a management summary, an error log and six Power BI tables with a fixed schema. Two of those tables accumulate over time, which is what makes trend curves and break ageing possible: the reconciliation knows how long each break has remained open, and a break outstanding for eight days calls for different treatment from one raised this morning.
+### The build: the winning process, end to end
 
-### Engineering notes
+The process the grid ranked first — daily front-office/back-office reconciliation in Capital Markets Operations — is industrialised in full. Transactions are matched on five keys, amounts compared within tolerance, and every discrepancy qualified with a probable cause, a recommended action and a confidence score: a language model performs that qualification when configured, with a deterministic rule engine taking over on any failure, so the service degrades instead of stopping.
 
-Ninety-two automated tests cover matching logic, indicator computation, schema stability, file parsing and security, alongside twenty-four tooled acceptance datasets. A security review found and fixed a spreadsheet formula injection vulnerability: a counterparty named `=cmd|'/c calc.exe'!A0` was written to the workbook as an executable dynamic data exchange formula rather than as text. Remediation, secret redaction in logs and transport validation are documented in the solution design.
+Outputs: an Excel workbook, a management summary, an error log, and six Power BI tables with a fixed schema. Two of those tables accumulate over time — what makes trend curves and break-ageing possible, since a break outstanding for eight days calls for different treatment than one raised this morning.
 
-Built with Python and pandas, reporting through Excel, Power BI and an interactive Streamlit view (`streamlit run streamlit_app.py`). The design is deliberately tool-agnostic: the same logical model would transfer to UiPath, Power Automate or Automation Anywhere in a production environment.
+### The outcome
+
+92 automated tests cover matching logic, indicator computation, schema stability, file parsing and security, backed by 24 tooled acceptance datasets. A security review I ran found and fixed a spreadsheet formula-injection vulnerability before it shipped: a counterparty named `=cmd|'/c calc.exe'!A0` was being written into the workbook as an executable dynamic-data-exchange formula, not as text.
+
+Built with Python and pandas, reported through Excel, Power BI and an interactive Streamlit view (`streamlit run streamlit_app.py`). The design stays deliberately tool-agnostic: the same logical model would transfer to UiPath, Power Automate or Automation Anywhere in a production environment.
 
 ---
 
