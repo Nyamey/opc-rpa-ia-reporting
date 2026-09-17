@@ -34,6 +34,8 @@ Outputs: an Excel workbook, a management summary, an error log, and six Power BI
 
 Built with Python and pandas, reported through Excel, Power BI and an interactive Streamlit view (`streamlit run streamlit_app.py`). The design stays deliberately tool-agnostic: the same logical model would transfer to UiPath, Power Automate or Automation Anywhere in a production environment.
 
+**🔗 Live demo: [opc-rpa-ia-reporting.streamlit.app](https://opc-rpa-ia-reporting.streamlit.app/)**
+
 ---
 
 ## Vue interactive
