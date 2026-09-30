@@ -1,5 +1,9 @@
 # Automatisation des opérations bancaires : sélection et réconciliation
 
+**Simulated case study on synthetic data, built from a job description.** Étude de cas simulée sur données synthétiques, construite à partir d'une offre d'emploi.
+
+[![Tests](https://github.com/Nyamey/opc-rpa-ia-reporting/actions/workflows/tests.yml/badge.svg)](https://github.com/Nyamey/opc-rpa-ia-reporting/actions/workflows/tests.yml)
+
 ## Case study
 
 **Before automating anything, prove the process actually deserves it.**
@@ -8,31 +12,31 @@ The working language of the detailed documentation below is French; this section
 
 ### The problem
 
-A bank's operations division loses several hours a day reconciling front-office and back-office records by hand, then justifying every discrepancy line by line — tedious, repetitive, and exactly the kind of work automation should absorb. But in a regulated bank, reaching for RPA on the wrong process is a common and expensive mistake: automating a process that already has an API, or one whose inputs are unstructured, hard-codes a bad design instead of fixing it.
+A bank's operations division loses several hours a day reconciling front-office and back-office records by hand, then justifying every discrepancy line by line: tedious, repetitive work, exactly the kind automation should absorb. But in a regulated bank, reaching for RPA on the wrong process is a common and expensive mistake: automating a process that already has an API, or one whose inputs are unstructured, hard-codes a bad design instead of fixing it.
 
 ### The decision: prove the candidate before building anything
 
-This repository covers the two moments of an automation programme, in that order — select the right process, then industrialise one end to end. Twenty candidate processes across five operational sectors (Capital Markets Operations, Global Referential Management, Financing and Trade Operations, Cash Management Services, Supply Chain Services) are scored on two axes: value (FTE workload, regulatory exposure, current error rate) and feasibility (share of rule-based handling, process stability, input structure, number of systems touched).
+This repository covers the two moments of an automation programme, in that order: select the right process, then build the automation of one process in full. Twenty candidate processes across five operational sectors (Capital Markets Operations, Global Referential Management, Financing and Trade Operations, Cash Management Services, Supply Chain Services) are scored on two axes: value (FTE workload, regulatory exposure, current error rate) and feasibility (share of rule-based handling, process stability, input structure, number of systems touched).
 
 Three criteria are treated as knock-outs rather than weighted factors, because a strong score elsewhere must never compensate for them:
 
-- **An API already exists.** Driving a screen with a robot when the system exposes an interface is an engineering mistake — more brittle and more expensive to maintain than a direct integration. The process leaves RPA scope entirely.
+- **An API already exists.** Driving a screen with a robot when the system exposes an interface is an engineering mistake: more brittle and more expensive to maintain than a direct integration. The process leaves RPA scope entirely.
 - **Input data is unstructured.** A robot cannot read a document; the process needs a hybrid design with document recognition ahead of the robot, never a classic automation.
 - **Rule-based handling falls below 60%.** Automating a process where four cases out of ten fall outside the standard path would hard-code the workarounds teams invented to compensate for a poorly designed process, rather than fix the process.
 
-Eleven of twenty processes are retained, representing 37 FTE of addressable workload out of 45 assessed. The trade-off worth surfacing in a steering committee: the two largest opportunities both need document recognition, so the programme cannot hit its savings target with classic RPA alone — a conclusion the scoring grid forces out before a single line of automation code is written.
+Eleven of twenty processes are retained, representing 37 FTE of addressable workload out of 45 assessed in the synthetic dataset. The trade-off worth surfacing in a steering committee: the two largest opportunities both need document recognition, so the programme cannot hit its savings target with classic RPA alone. The scoring grid forces that conclusion out before a single line of automation code is written.
 
-### The build: the winning process, end to end
+### The build: the winning process, in full
 
-The process the grid ranked first — daily front-office/back-office reconciliation in Capital Markets Operations — is industrialised in full. Transactions are matched on five keys, amounts compared within tolerance, and every discrepancy qualified with a probable cause, a recommended action and a confidence score: a language model performs that qualification when configured, with a deterministic rule engine taking over on any failure, so the service degrades instead of stopping.
+The process the grid ranked first, daily front-office/back-office reconciliation in Capital Markets Operations, is built in full. Transactions are matched on five keys, amounts compared within tolerance, and every discrepancy qualified with a probable cause, a recommended action and a confidence score: a language model performs that qualification when configured, with a deterministic rule engine taking over on any failure, so the service degrades instead of stopping.
 
-Outputs: an Excel workbook, a management summary, an error log, and six Power BI tables with a fixed schema. Two of those tables accumulate over time — what makes trend curves and break-ageing possible, since a break outstanding for eight days calls for different treatment than one raised this morning.
+Outputs: an Excel workbook, a management summary, an error log, and six Power BI tables with a fixed schema. Two of those tables accumulate over time, which makes trend curves and break-ageing possible: a break outstanding for eight days calls for different treatment than one raised this morning.
 
 ### The outcome
 
 92 automated tests cover matching logic, indicator computation, schema stability, file parsing and security, backed by 24 tooled acceptance datasets. A security review I ran found and fixed a spreadsheet formula-injection vulnerability before it shipped: a counterparty named `=cmd|'/c calc.exe'!A0` was being written into the workbook as an executable dynamic-data-exchange formula, not as text.
 
-Built with Python and pandas, reported through Excel, Power BI and an interactive Streamlit view (`streamlit run streamlit_app.py`). The design stays deliberately tool-agnostic: the same logical model would transfer to UiPath, Power Automate or Automation Anywhere in a production environment.
+Built with Python and pandas, reported through Excel, Power BI and an interactive Streamlit view (`streamlit run streamlit_app.py`). The design stays deliberately tool-agnostic: the same logical model would transfer to UiPath, Power Automate or Automation Anywhere.
 
 **🔗 Live demo: [opc-rpa-ia-reporting.streamlit.app](https://opc-rpa-ia-reporting.streamlit.app/)**
 
